@@ -1,14 +1,33 @@
-import { useState } from "react"
-import words from "./wordlist.json"
+import { useState } from 'react';
+import words from './wordlist.json';
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState(() => {
-    return words[Math.floor(Math.random() * words.length)]
-  return <h1>Hi</h1>
-  })
-  
-  console.log(wordToGuess)
-  return <h1>(wordToGuess)</h1>
+    return words[Math.floor(Math.random() * words.length)];
+  });
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+
+  return (
+    <div
+      style={{
+        maxWidth: '800px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        margin: '0 auto',
+        alignItems: 'center'
+      }}
+    >
+      <div
+        style={{
+          fontSize: '2rem',
+          textAlign: 'center'
+        }}
+      >
+        Lose Win
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
