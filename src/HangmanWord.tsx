@@ -17,7 +17,7 @@ export function HangmanWord() {
           <span
             style={{
               visibility: guessedLetters.includes(letter) ? 'visible' : 'hidden'
-            }}
+            }} key={index}
           >
             {letter}
           </span>
